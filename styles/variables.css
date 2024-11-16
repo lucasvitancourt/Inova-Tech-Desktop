@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #ff4d6d;
+  --secondary-color: #ff758f;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --gray-light: #e9ecef;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #ff758f;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 

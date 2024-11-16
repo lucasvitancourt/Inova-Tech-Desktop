@@ -1,0 +1,111 @@
+/* Animações básicas */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Aplicação das animações */
+.card, 
+.metrica-card, 
+#form-container, 
+.modal-content {
+  animation: fadeIn 0.5s ease-out, slideIn 0.5s ease-out;
+}
+
+/* Efeitos de transição */
+.tab-button, 
+.action-buttons button {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tab-button:active, 
+.action-buttons button:active {
+  transform: scale(0.95);
+}
+
+/* Efeito de onda ao clicar */
+button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:active::after {
+  width: 0;
+  height: 0;
+  opacity: 0.2;
+  transition: 0s;
+}
+
+/* Animações para notificações */
+.notification {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Animações para modal */
+.modal.active .modal-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Animação do loader */
+.loader {
+  animation: spin 1s linear infinite;
+}
+
+/* Animações para hover */
+.card:hover,
+.metrica-card:hover {
+  transform: translateY(-5px);
+  transition: var(--transition);
+}
+
+.dashboard-logo:hover {
+  transform: scale(1.05);
+  transition: var(--transition);
+}
+
+/* Animações para botões */
+.edit-btn:hover,
+.delete-btn:hover,
+.pdf-btn:hover {
+  transform: translateY(-2px);
+  transition: var(--transition);
+}
+
+/* Animação para scroll to top */
+.scroll-to-top {
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+} 

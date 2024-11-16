@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;">
+    <title>Inova Tech - Sistema de Gerenciamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="title-bar">
+            <h1>Inova Tech</h1>
+            <div class="window-controls">
+                <button id="minimize-btn"><i class="fas fa-window-minimize"></i></button>
+                <button id="maximize-btn"><i class="fas fa-window-maximize"></i></button>
+                <button id="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <nav>
+                    <button class="tab-button" data-tabela="home"><i class="fas fa-home"></i> Início</button>
+                    <button class="tab-button" data-tabela="metricas"><i class="fas fa-chart-line"></i> Métricas</button>
+                    <button class="tab-button" data-tabela="funcionarios"><i class="fas fa-users"></i> Funcionários</button>
+                    <button class="tab-button" data-tabela="clientes"><i class="fas fa-user-friends"></i> Clientes</button>
+                    <button class="tab-button" data-tabela="produtos"><i class="fas fa-box"></i> Produtos</button>
+                    <button class="tab-button" data-tabela="pedidos"><i class="fas fa-shopping-cart"></i> Pedidos</button>
+                    <button class="tab-button" data-tabela="notas_fiscais"><i class="fas fa-file-invoice"></i> Notas Fiscais</button>
+                    <button class="tab-button" data-tabela="fornecedores"><i class="fas fa-truck"></i> Fornecedores</button>
+                    <button class="tab-button" data-tabela="categorias"><i class="fas fa-tags"></i> Categorias</button>
+                    <button class="tab-button" data-tabela="cargos"><i class="fas fa-id-badge"></i> Cargos</button>
+                    <button class="tab-button" data-tabela="paises"><i class="fas fa-globe"></i> Países</button>
+                </nav>
+                <button id="config-btn" class="config-button">
+                    <i class="fas fa-cog"></i>
+                    Configurações
+                </button>
+            </div>
+            <main>
+                <div id="home-container" style="display: none;">
+                    <div class="dashboard-header">
+                        <img src="inova.png" alt="Inova Tech Logo" class="dashboard-logo">
+                        <h2>Bem-vindo ao Sistema de Gerenciamento Inova Tech</h2>
+                    </div>
+                    <p class="dashboard-description">
+                        Gerencie seus funcionários, clientes, produtos e vendas de forma eficiente com nossa plataforma integrada.
+                    </p>
+                    <div class="dashboard-cards">
+                        <div class="card">
+                            <i class="fas fa-users card-icon"></i>
+                            <h3>Funcionários</h3>
+                            <p id="total-funcionarios">Carregando...</p>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-box card-icon"></i>
+                            <h3>Produtos</h3>
+                            <p id="total-produtos">Carregando...</p>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-user-friends card-icon"></i>
+                            <h3>Clientes</h3>
+                            <p id="total-clientes">Carregando...</p>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-shopping-cart card-icon"></i>
+                            <h3>Pedidos</h3>
+                            <p id="total-pedidos">Carregando...</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-footer">
+                        <p>Para mais informações, visite nosso site: <a href="https://www.inovatech.com" target="_blank">www.inovatech.com</a></p>
+                        <p>Versão do sistema: 1.0.0</p>
+                    </div>
+                </div>
+                <div id="metricas-container" style="display: none;">
+                    <h2>Métricas</h2>
+                    <div class="metricas-grid">
+                        <div class="metrica-card">
+                            <h3>Vendas por Mês</h3>
+                            <canvas id="vendas-por-mes-chart"></canvas>
+                        </div>
+                        <div class="metrica-card">
+                            <h3>Top 5 Produtos Mais Vendidos</h3>
+                            <canvas id="top-produtos-chart"></canvas>
+                        </div>
+                        <div class="metrica-card">
+                            <h3>Clientes por Estado</h3>
+                            <canvas id="clientes-por-estado-chart"></canvas>
+                        </div>
+                        <div class="metrica-card">
+                            <h3>Evolução de Vendas</h3>
+                            <canvas id="evolucao-vendas-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div id="list-container"></div>
+                <div id="form-container" style="display: none;"></div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="renderer.js"></script>
+</body>
+</html>

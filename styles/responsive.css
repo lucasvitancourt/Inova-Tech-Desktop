@@ -1,0 +1,149 @@
+/* Media queries para diferentes tamanhos de tela */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    max-height: none;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  main {
+    height: calc(100vh - 240px);
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .metricas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-logo {
+    max-width: 300px;
+  }
+
+  .form-responsive {
+    grid-template-columns: 1fr;
+  }
+
+  .config-modal {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .filtro-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-container input[type="text"],
+  .filtro-container select {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-bar h1 {
+    font-size: 18px;
+  }
+
+  .window-controls button {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card-icon {
+    font-size: 36px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .config-actions {
+    flex-direction: column;
+  }
+
+  .notification {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
+
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* Ajustes para impressão */
+@media print {
+  .sidebar,
+  .title-bar,
+  .action-buttons,
+  .filtro-container {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+} 

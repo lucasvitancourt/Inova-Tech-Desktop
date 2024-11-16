@@ -1,0 +1,215 @@
+/* Estilos para tabelas */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  background-color: var(--primary-color);
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: var(--gray-light);
+}
+
+/* Ajustes para responsividade das tabelas */
+.table-responsive {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Distribuição do espaço das colunas */
+td:first-child, 
+th:first-child {
+  width: 50px;
+}
+
+td:last-child, 
+th:last-child {
+  width: 120px;
+}
+
+/* As outras colunas dividem o espaço restante igualmente */
+td:not(:first-child):not(:last-child),
+th:not(:first-child):not(:last-child) {
+  width: calc((100% - 170px) / var(--num-columns, 4));
+}
+
+/* Tooltip para texto truncado */
+td {
+  position: relative;
+}
+
+td:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: var(--surface-color);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  max-width: 200px;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: 14px;
+  display: none;
+}
+
+td:hover:hover::after {
+  display: block;
+}
+
+/* Ajustes para os botões de ação */
+.action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  width: 100%;
+  min-width: auto;
+}
+
+.edit-btn, 
+.delete-btn, 
+.pdf-btn {
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* Estilos para a tabela de itens do pedido */
+.itens-pedido-lista {
+  margin-top: 25px;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: 100%;
+}
+
+.itens-pedido-header,
+.item-pedido {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 0.8fr;
+  padding: 12px 15px;
+  align-items: center;
+  gap: 10px;
+}
+
+.itens-pedido-header {
+  background-color: var(--primary-color);
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  padding: 15px 20px;
+}
+
+.item-pedido {
+  border-top: 1px solid var(--gray-light);
+  transition: var(--transition);
+  background-color: var(--surface-color);
+}
+
+.item-pedido:nth-child(even) {
+  background-color: var(--gray-light);
+}
+
+.item-pedido:hover {
+  background-color: var(--gray-light);
+}
+
+.item-pedido span,
+.itens-pedido-header span {
+  padding: 8px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Total do pedido */
+.total-pedido {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 25px;
+  color: var(--text-color);
+  padding: 15px 20px;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+/* Container para itens do pedido */
+.itens-pedido-container {
+  width: 540px;
+  padding-bottom: 15px;
+}
+
+/* Botão de adicionar produto */
+.add-item-btn {
+  background-color: var(--success-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.add-item-btn i {
+  font-size: 16px;
+}
+
+.add-item-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Container de filtros para tabelas */
+.filtro-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filtro-container input[type="text"],
+.filtro-container select {
+  padding: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  min-width: 200px;
+}
+ 
