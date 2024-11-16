@@ -22,8 +22,9 @@ Projeto desenvolvido para o segundo semestre do curso Técnico em Informática d
    ```bash
    npm install
    ```
+4. Crie o banco MySql usando o arquivo inova_tech.sql
 
-4. Inicie o projeto:
+5. Inicie o projeto:
 
    ```bash
    npm start
