@@ -1,5 +1,3 @@
-Aqui está um modelo simples de README para o seu projeto Electron:
-
 
 # Inova-Tech-Desktop
 
@@ -35,9 +33,7 @@ Projeto desenvolvido para o segundo semestre do curso Técnico em Informática d
 
 - Electron
 - Node.js
-- Outras dependências (se houver)
+- MySql
 
-## Contribuição
 
-Sinta-se à vontade para contribuir com melhorias no projeto.
 
