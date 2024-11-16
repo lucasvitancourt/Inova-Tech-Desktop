@@ -1,6 +1,6 @@
 Aqui está um modelo simples de README para o seu projeto Electron:
 
-```markdown
+
 # Inova-Tech-Desktop
 
 Projeto desenvolvido para o segundo semestre do curso Técnico em Informática da SETREM.
@@ -41,4 +41,3 @@ Projeto desenvolvido para o segundo semestre do curso Técnico em Informática d
 
 Sinta-se à vontade para contribuir com melhorias no projeto.
 
-```
